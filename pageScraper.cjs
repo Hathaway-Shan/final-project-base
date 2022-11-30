@@ -20,15 +20,19 @@ const scraperObject = {
 
       for (const job of jobs) {
         jobList.push({
-          company: job.querySelector('h3[itemprop]').innerHTML,
-          position: job.querySelector('h2[itemprop]').innerHTML,
+          company: job
+            .querySelector('h3[itemprop]')
+            .innerHTML.replace(/[\n]/gm, ''),
+          position: job
+            .querySelector('h2[itemprop]')
+            .innerHTML.replace(/[\n]/gm, ''),
           link: job.querySelector('.preventLink[itemprop]').href,
         });
       }
       return jobList;
     });
     console.log('data is: ', data);
-    // await browser.close();
+    await browser.close();
   },
 };
 
