@@ -1,9 +1,34 @@
 const scraperObject = {
-  url: 'https://remoteok.com/remote-javascript-jobs',
+  url: 'https://remoteok.com/remote-javascript-jobs?order_by=date',
   async scraper(browser) {
     let page = await browser.newPage();
+    // we cannot read console logs outside the browser instance without this code
+    page.on('console', async (e) => {
+      const args = await Promise.all(
+        e.args().map((a) => a.jsonValue())
+      );
+      console[e.type() === 'warning' ? 'warn' : e.type()](...args);
+    });
     console.log(`navigating to ${this.url}...`);
-    await page.goto(this.url);
+    await page.goto(this.url, { waitUntil: 'networkidle0' });
+
+    //we call puppeteers evaluate method to select specific information from the page
+    const data = await page.evaluate(() => {
+      const jobList = [];
+
+      const jobs = document.querySelectorAll('.job');
+
+      for (const job of jobs) {
+        jobList.push({
+          company: job.querySelector('h3[itemprop]').innerHTML,
+          position: job.querySelector('h2[itemprop]').innerHTML,
+          link: job.querySelector('.preventLink[itemprop]').href,
+        });
+      }
+      return jobList;
+    });
+    console.log('data is: ', data);
+    // await browser.close();
   },
 };
 
