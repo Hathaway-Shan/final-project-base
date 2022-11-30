@@ -27,6 +27,12 @@ const scraperObject = {
             .querySelector('h2[itemprop]')
             .innerHTML.replace(/[\n]/gm, ''),
           link: job.querySelector('.preventLink[itemprop]').href,
+          salary: job
+            .querySelector('.company.position.company_and_position')
+            .innerText.match(/[a-zA-Z0-9]+/gm)
+            .slice(-2)
+            .toString()
+            .replace(/[,]/, '-'),
         });
       }
       return jobList;
