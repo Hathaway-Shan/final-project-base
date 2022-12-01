@@ -37,7 +37,7 @@ const scraperObject = {
       }
       return jobList;
     });
-    console.log('data is: ', data);
+    console.log('data is: ', JSON.stringify(data));
     await browser.close();
   },
 };
