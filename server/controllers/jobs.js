@@ -1,20 +1,27 @@
-const { Router } = require('express');
+// const { Router } = require('express');
 
-const Job = require('../models/Jobs');
+// const Job = require('../models/Jobs');
 
-const router = Router();
+import { Router } from 'express';
+import db from '../database.js';
 
-router
+// const router = Router();
+
+export default Router()
   .get('/', async (req, res, next) => {
-    try {
-      const jobs = await Job.getAll();
-      res.json(jobs);
-    } catch (error) {
-      /* eslint-disable no-console */
-      // console.log('JOBS GET ALL', error);
-      next(error);
-    }
+    return db
+      .query('select * from jobs;')
+      .then((result) => res.send(result.rows));
   })
+  //   try {
+  //     const jobs = await Job.getAll();
+  //     res.json(jobs);
+  //   } catch (error) {
+  //     /* eslint-disable no-console */
+  //     console.log('JOBS GET ALL', error);
+  //     next(error);
+  //   }
+  // })
   .post('/', async (req, res) => {
     try {
       const newJob = await Job.insert(req.body);
@@ -24,5 +31,3 @@ router
       console.log('JOBS INSERT', error);
     }
   });
-
-module.exports = router;
