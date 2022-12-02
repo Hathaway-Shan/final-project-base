@@ -4,14 +4,15 @@
 
 import { Router } from 'express';
 import db from '../database.js';
+import Job from '../models/Jobs.js';
 
 // const router = Router();
 
 export default Router()
-  .get('/', async (req, res, next) => {
-    return db
-      .query('select * from jobs;')
-      .then((result) => res.send(result.rows));
+  .get('/', (req, res, next) => {
+    // return db
+    // .query('select * from jobs;')
+    return Job.getAll().then((result) => res.json(result));
   })
   //   try {
   //     const jobs = await Job.getAll();
@@ -23,11 +24,5 @@ export default Router()
   //   }
   // })
   .post('/', async (req, res) => {
-    try {
-      const newJob = await Job.insert(req.body);
-      res.json(newJob);
-    } catch (error) {
-      /* eslint-disable no-console */
-      console.log('JOBS INSERT', error);
-    }
+    return Job.insert(req.body).then((result) => res.json(result));
   });
