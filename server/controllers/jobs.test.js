@@ -7,9 +7,12 @@ describe('the server', () => {
   beforeEach(() => {
     setupDb();
   });
-  it('#get /jobs returns a list of jobs', async () => {
-    const response = await request(app).get('/jobs');
-    console.log('RESPONSE BODY IS: ', response.body);
-    expect(response.body.length).toEqual(1);
+  it('#get /jobs returns a list of jobs', () => {
+    return request(app)
+      .get('/jobs')
+      .then((res) => {
+        console.log('RESPONSE BODY IS: ', res.body);
+        expect(res.body.length).toEqual(1);
+      });
   });
 });

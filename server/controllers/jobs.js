@@ -11,7 +11,7 @@ router
       res.json(jobs);
     } catch (error) {
       /* eslint-disable no-console */
-      console.log('JOBS GET ALL', error);
+      // console.log('JOBS GET ALL', error);
       next(error);
     }
   })
