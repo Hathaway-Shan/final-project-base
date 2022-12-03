@@ -1,6 +1,6 @@
 import pool from '../database.js';
 
-module.exports = class Job {
+export default class Job {
   id;
   company;
   position;
@@ -26,4 +26,4 @@ module.exports = class Job {
     );
     return new Job(rows[0]);
   }
-};
+}

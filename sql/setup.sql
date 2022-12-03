@@ -15,5 +15,5 @@ create table jobs (
 insert into
   jobs (company, position, link, salary)
 values
-  ('Sticker Mule', 'Site Reliability Engineer', 'https://remoteok.com/remote-jobs/remote-site-reliability-engineer-sticker-mule-154372', '120k-150k')
+  ('Test Job 1', 'Site Reliability Engineer', 'https://remoteok.com/remote-jobs/remote-site-reliability-engineer-sticker-mule-154372', '120k-150k')
   ;

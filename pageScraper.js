@@ -1,4 +1,4 @@
-const scraperObject = {
+export default {
   url: 'https://remoteok.com/remote-javascript-jobs?order_by=date',
   async scraper(browser) {
     let page = await browser.newPage();
@@ -43,4 +43,4 @@ const scraperObject = {
   },
 };
 
-module.exports = scraperObject;
+// module.exports = scraperObject;

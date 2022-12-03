@@ -14,7 +14,7 @@ describe('the server', () => {
         expect(res.body).toEqual([
           {
             id: '1',
-            company: 'Sticker Mule',
+            company: 'Test Job 1',
             position: 'Site Reliability Engineer',
             link: 'https://remoteok.com/remote-jobs/remote-site-reliability-engineer-sticker-mule-154372',
             salary: '120k-150k',
@@ -26,13 +26,13 @@ describe('the server', () => {
     return request(app)
       .post('/jobs')
       .send({
-        company: 'Mulligan Funding',
+        company: 'Test Job 2',
         position: 'Software Engineer',
         link: 'https://remoteok.com/remote-jobs/remote-software-engineer-mulligan-funding-146013',
         salary: '70k-120k',
       })
       .then((res) => {
-        // console.log('RESPONSE BODY IS', res.body);
+        // console.log('RESPONSE BODY IS', res.body); //returns expected
         expect(res.status).toBe(200);
       });
   });
