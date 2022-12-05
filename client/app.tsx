@@ -15,6 +15,7 @@ import {
   BrowserRouter as Router,
   Routes,
 } from 'react-router-dom';
+import MainPage from './components/MainPage/MainPage';
 
 const FooList = fooListFn();
 const CatList = catListFn();
@@ -32,7 +33,8 @@ root.render(
           <Route index element={<Dashboard />} />
           <Route path="foos" element={<FooList />} />
           <Route path="cats" element={<CatList />} />
-          <Route path="jobs" element={<JobList />} />
+          {/* <Route path="jobs" element={<JobList />} />  */}
+          {/* <Route path="jobs" element={<MainPage />} /> */}
         </Route>
       </Routes>
     </Router>
