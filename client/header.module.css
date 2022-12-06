@@ -6,13 +6,13 @@
   height: var(--header-height);
 
   background: var(--header-color);
+  background-color: cadetblue;
   color: var(--white-color);
 
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 20px;
   align-items: center;
-
 }
 
 .NavigationContainer {

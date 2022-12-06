@@ -27,7 +27,7 @@ export default function JobList() {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       {jobs &&
         jobs.map((job) => {
           return <JobCard key={job.id} {...job} />;

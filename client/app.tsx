@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import './reset.css';
+// import './reset.css';
 import './light-theme.css';
 import './dark-theme.css';
 import './global.css';
