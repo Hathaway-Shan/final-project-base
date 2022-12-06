@@ -5,11 +5,12 @@ export default function JobList() {
   //break this out into it's own hook with state and error
   const [jobs, setJobs] = useState([]);
   const [error, setError] = useState('');
+
   useEffect(() => {
     getJobs();
   }, []);
   function getJobs() {
-    fetch('/api/v1').then((response) => {
+    fetch('/api/v1/jobs').then((response) => {
       return response
         .json()
         .then((data) => {
@@ -20,10 +21,11 @@ export default function JobList() {
         });
     });
   }
-  // return <div>{jobs ? jobs : 'there is no job data available'}</div>;
+
   if (error != '') {
     return <h3 style={{ color: 'red' }}>{JSON.stringify(error)}</h3>;
   }
+
   return (
     <div>
       {jobs &&

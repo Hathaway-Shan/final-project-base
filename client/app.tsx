@@ -4,12 +4,7 @@ import './reset.css';
 import './light-theme.css';
 import './dark-theme.css';
 import './global.css';
-// import MainPage from './components/MainPage/MainPage.js';
-import fooListFn from './components/foo-list';
 import catListFn from './components/cat-list';
-// import jobListFn from './components/job-list';
-
-import dashboardFn from './components/dashboard';
 import Layout from './layout';
 import {
   Route,
@@ -18,11 +13,7 @@ import {
 } from 'react-router-dom';
 import JobList from './components/JobList/JobList';
 
-const FooList = fooListFn();
 const CatList = catListFn();
-
-// const JobList = jobListFn();
-const Dashboard = dashboardFn();
 const container =
   document.getElementById('app') || document.createElement('div');
 container.id = 'app';
@@ -32,12 +23,10 @@ root.render(
   <Router>
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="foos" element={<FooList />} />
+        <Route index element={<JobList />} />
+
         <Route path="cats" element={<CatList />} />
-        {/* <Route path="jobs" element={<JobList />} />  */}
-        {/* <Route path="jobs" element={<MainPage />} /> */}
-        <Route path="jobs" element={<JobList />} />
+        {/* <Route path="jobs" element={<JobList />} /> */}
       </Route>
     </Routes>
   </Router>
