@@ -1,9 +1,13 @@
-.Layout {
+.layout {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
 
-  main {
+  /* main {
     padding: var(--padding);
-  }
+  } */
+}
+
+.main {
+  border: red solid 2px;
 }

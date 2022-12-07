@@ -3,6 +3,7 @@
 interface CssExports {
   'pagination': string;
   'paginationActive': string;
+  'paginationBttn': string;
   'wrapper': string;
 }
 export const cssExports: CssExports;

@@ -18,14 +18,11 @@ export default function JobList() {
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
+
   const displayJobs = jobs
     .slice(pagesVisited, pagesVisited + jobsPerPage)
     .map((job) => {
-      return (
-        <div className={styles.wrapper}>
-          {jobs && <JobCard key={job.id} {...job} />};
-        </div>
-      );
+      return jobs && <JobCard key={job.id} {...job} />;
     });
 
   useEffect(() => {
@@ -42,6 +39,7 @@ export default function JobList() {
         })
         .catch((error) => {
           setError(`${response.status}: ${error.message}`);
+          console.log(error.message);
           setLoading(false);
         });
     });
@@ -60,18 +58,18 @@ export default function JobList() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      {displayJobs}
+    <>
+      <div className={styles.wrapper}>{displayJobs}</div>
       <ReactPaginate
         previousLabel={'previous'}
         nextLabel={'next'}
         pageCount={pageCount}
         onPageChange={changePage}
         containerClassName={styles.pagination}
-        previousLinkClassName={'previousBttn'}
-        nextLinkClassName={'nextBttn'}
+        previousLinkClassName={styles.paginationBttn}
+        nextLinkClassName={styles.paginationBttn}
         activeClassName={styles.paginationActive}
       />
-    </div>
+    </>
   );
 }
