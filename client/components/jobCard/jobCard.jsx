@@ -3,10 +3,11 @@ import styles from './jobCard.module.css';
 
 export default function JobCard(props) {
   let jobImagePath = '';
+  //alternately we could use regex '/\b(\w*Developer|developer\w*)\b/g'
 
-  if (props.position.includes('Engineer')) {
+  if (props.position.includes('ngineer')) {
     jobImagePath = '/images/Engineer.png';
-  } else if (props.position.includes('Developer')) {
+  } else if (props.position.includes('eveloper')) {
     jobImagePath = '/images/Developer.png';
   } else {
     jobImagePath = '/images/Binary.png';
