@@ -9,7 +9,7 @@ export default function Navigation() {
         Home
       </NavLink>
       <NavLink className={linkStyles.navigation} to="jobs">
-        jobs
+        About
       </NavLink>
     </nav>
   );

@@ -9,20 +9,40 @@
   text-align: center;
 }
 
+/* don't know how I feel about this come back maybe? */
+/* .card:hover {
+  transform: scale(1.01);
+} */
+
 .link {
   font-size: 16px;
   text-align: center;
   text-decoration: none;
   color: black;
   background-color: white;
-  padding: 14px 28px;
+  padding: 1rem;
+  margin: 2rem;
   border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
+  background: transparent;
+  transition: 100ms ease-in, color 80ms ease-in;
 }
 
 .link:hover {
-  background-color: rgb(30, 146, 205);
+  background-color: rgb(114, 189, 192);
   color: white;
   box-shadow: 0 2px 20px rgb(185, 186, 187);
+}
+
+.image {
+  width: 8rem;
+  height: 8rem;
+  margin-top: 6px;
+  object-fit: contain;
+  align-self: center;
+}
+
+.salary {
+  margin-bottom: 6px;
 }

@@ -13,10 +13,10 @@ export default function JobCard(props) {
   }
   return (
     <div className={styles.card} key={props.id}>
-      <img src={jobImagePath}></img>
+      <img className={styles.image} src={jobImagePath}></img>
       <h3 className="company-line">{props.company}</h3>
-      <h4 className="position-line">{props.position}</h4>
-      <div className="salary-line">{props.salary}</div>
+      <div className="position-line">{props.position}</div>
+      <div className={styles.salary}>{props.salary}</div>
       <a className={styles.link} href={props.link}>
         Go to Site
       </a>
