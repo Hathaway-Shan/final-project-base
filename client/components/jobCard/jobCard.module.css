@@ -1,0 +1,28 @@
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgb(185, 186, 187);
+  border-radius: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 200ms ease-in;
+  text-align: center;
+}
+
+.link {
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  padding: 14px 28px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.link:hover {
+  background-color: rgb(30, 146, 205);
+  color: white;
+  box-shadow: 0 2px 20px rgb(185, 186, 187);
+}

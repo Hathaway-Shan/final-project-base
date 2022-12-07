@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './JobList.module.css';
 import JobCard from '../jobCard/jobCard';
 
 export default function JobList() {
@@ -27,7 +28,7 @@ export default function JobList() {
   }
 
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       {jobs &&
         jobs.map((job) => {
           return <JobCard key={job.id} {...job} />;
