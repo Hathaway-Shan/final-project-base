@@ -1,4 +1,5 @@
 .card {
+  height: 374px;
   overflow: hidden;
   box-shadow: 0 2px 20px rgb(185, 186, 187);
   border-radius: 0.2rem;
