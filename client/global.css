@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Space+Mono:wght@400;700&display=swap');
+
 body {
+  font-family: Oxygen, sans-serif;
   background-color: var(--background-color);
   color: var(--color);
+  margin: 2rem;
 }

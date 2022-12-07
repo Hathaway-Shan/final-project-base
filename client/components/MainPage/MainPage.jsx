@@ -1,4 +1,4 @@
-import jobCard from '../jobCard/jobCard.js';
+import jobCard from '../jobCard/jobCard.jsx';
 import useJobs from '../../hooks/useJobs.js';
 
 export default function MainPage() {
