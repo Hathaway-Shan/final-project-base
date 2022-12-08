@@ -65,6 +65,7 @@ export default function JobList() {
         nextLabel={'next'}
         pageCount={pageCount}
         onPageChange={changePage}
+        pageClassName={styles.pageIcon}
         containerClassName={styles.pagination}
         previousLinkClassName={styles.paginationBttn}
         nextLinkClassName={styles.paginationBttn}

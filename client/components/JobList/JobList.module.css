@@ -24,17 +24,23 @@
   cursor: pointer;
 }
 
-.pagination a:hover {
-  color: white;
-  background-color: cadetblue;
+.pageIcon :hover {
+  color: black;
+  background-color: whitesmoke;
 }
 
 .paginationActive a {
-  color: white;
-  background-color: cadetblue;
-  border: 1px solid rgb(102, 168, 170);
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid white;
 }
 
 .paginationBttn {
   border: 2px solid black;
+  background-color: whitesmoke;
+}
+
+.paginationBttn:hover {
+  color: whitesmoke;
+  background-color: rgb(114, 189, 192);
 }
