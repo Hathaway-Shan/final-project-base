@@ -35,6 +35,10 @@
   border: 1px solid white;
 }
 
+.paginationActive a:hover {
+  border: 1px solid black;
+}
+
 .paginationBttn {
   border: 2px solid black;
   background-color: whitesmoke;
