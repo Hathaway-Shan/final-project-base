@@ -1,14 +1,14 @@
-import Navigation from './navigation';
+import Navigation from '../Navigation/navigation';
 import styles from './header.module.css';
 
 export default function Header() {
   return (
     <header className={styles.Header}>
-      <h1>Placeholder App Name</h1>
+      <h1>100 Jobs</h1>
 
-      {/* <div className={styles.NavigationContainer}>
+      <div className={''}>
         <Navigation />
-      </div> */}
+      </div>
     </header>
   );
 }

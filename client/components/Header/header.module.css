@@ -12,15 +12,3 @@
   gap: 20px;
   align-items: center;
 }
-
-@media (min-width: 700px) {
-  padding-left: var(--padding);
-
-  .MenuContainer {
-    display: none;
-  }
-
-  .NavigationContainer {
-    display: initial;
-  }
-}
