@@ -3,4 +3,44 @@
   grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
   gap: 2rem;
   justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* pagination css */
+.pagination {
+  width: 100%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pagination a {
+  padding: 8px;
+  margin: 6px;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+
+.pageIcon :hover {
+  color: black;
+  background-color: whitesmoke;
+}
+
+.paginationActive a {
+  color: black;
+  background-color: whitesmoke;
+  border: 1px solid white;
+}
+
+.paginationBttn {
+  border: 2px solid black;
+  background-color: whitesmoke;
+}
+
+.paginationBttn:hover {
+  color: whitesmoke;
+  background-color: rgb(114, 189, 192);
 }

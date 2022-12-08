@@ -1,9 +1,24 @@
-.Layout {
+.layout {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
 
-  main {
+  /* main {
     padding: var(--padding);
-  }
+  } */
+}
+
+.main {
+  /* background-image: linear-gradient(to right, #8360c3, #2ebf91); */
+  /* background-image: linear-gradient(
+    to right,
+    #c6ffdd,
+    #fbd786,
+    #f7797d
+  ); */
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(156, 252, 248, 1) 11.2%,
+    rgba(110, 123, 251, 1) 91.1%
+  );
 }

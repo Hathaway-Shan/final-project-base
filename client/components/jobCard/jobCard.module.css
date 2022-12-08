@@ -1,4 +1,6 @@
 .card {
+  height: 374px;
+  background-color: rgb(216, 216, 216);
   overflow: hidden;
   box-shadow: 0 2px 20px rgb(185, 186, 187);
   border-radius: 0.2rem;
@@ -19,19 +21,19 @@
   text-align: center;
   text-decoration: none;
   color: black;
-  background-color: white;
+  background-color: whitesmoke;
   padding: 1rem;
   margin: 2rem;
   border: 2px solid black;
   border-radius: 5px;
   cursor: pointer;
-  background: transparent;
+
   transition: 100ms ease-in, color 80ms ease-in;
 }
 
 .link:hover {
   background-color: rgb(114, 189, 192);
-  color: white;
+  color: whitesmoke;
   box-shadow: 0 2px 20px rgb(185, 186, 187);
 }
 
