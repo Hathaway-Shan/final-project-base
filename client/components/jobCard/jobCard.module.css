@@ -1,8 +1,8 @@
 .card {
   height: 374px;
-  background-color: rgb(216, 216, 216);
+  background-color: var(--cardBackground);
   overflow: hidden;
-  box-shadow: 0 2px 20px rgb(185, 186, 187);
+  box-shadow: 0 2px 20px var(--boxShadow);
   border-radius: 0.2rem;
   display: flex;
   flex-direction: column;
@@ -32,9 +32,9 @@
 }
 
 .link:hover {
-  background-color: rgb(114, 189, 192);
+  background-color: var(--buttonHover);
   color: whitesmoke;
-  box-shadow: 0 2px 20px rgb(185, 186, 187);
+  box-shadow: 0 2px 20px var(--boxShadow);
 }
 
 .image {
