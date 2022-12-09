@@ -11,14 +11,14 @@
   --defaultBlack: black;
 }
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
 #page-wrap {
   padding-bottom: 10px;
   padding-top: 10px;
-}
+} */
 
 body {
   font-family: Oxygen, sans-serif;
