@@ -1,9 +1,9 @@
 .card {
   height: 374px;
-  background-color: rgb(216, 216, 216);
+  background-color: var(--cardBackground);
   overflow: hidden;
-  box-shadow: 0 2px 20px rgb(185, 186, 187);
-  border-radius: 0.2rem;
+  box-shadow: 0 2px 20px var(--boxShadow);
+  border-radius: var(--borderRadius);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,11 +20,11 @@
   font-size: 16px;
   text-align: center;
   text-decoration: none;
-  color: black;
-  background-color: whitesmoke;
+  color: var(--defaultBlack);
+  background-color: var(--defaultWhite);
   padding: 1rem;
   margin: 2rem;
-  border: 2px solid black;
+  border: 2px solid var(--defaultBlack);
   border-radius: 5px;
   cursor: pointer;
 
@@ -32,9 +32,9 @@
 }
 
 .link:hover {
-  background-color: rgb(114, 189, 192);
-  color: whitesmoke;
-  box-shadow: 0 2px 20px rgb(185, 186, 187);
+  background-color: var(--buttonHover);
+  color: var(--defaultWhite);
+  box-shadow: 0 2px 20px var(--boxShadow);
 }
 
 .image {
