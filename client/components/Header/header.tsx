@@ -6,9 +6,7 @@ export default function Header() {
     <header className={styles.Header}>
       <h1>100 Jobs</h1>
 
-      <div className={''}>
-        <Navigation />
-      </div>
+      <div className={''}>{/* <Navigation /> */}</div>
     </header>
   );
 }

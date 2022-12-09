@@ -1,7 +1,63 @@
-.navigation {
+.header {
+  background-color: var(--defaultWhite);
+  box-shadow: 0px 0px 10px var(--boxShadow);
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
-  justify-self: end;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.navMenu {
+  border-radius: var(--borderRadius);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.navItem {
+  margin-left: 5rem;
+}
+
+.navItem a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--defaultBlack);
+}
+
+.navItem a:hover {
+  color: var(--buttonHover);
+}
+
+/* nav menu animation */
+.navItem a::after {
+  content: '';
+  height: 0.5px;
+  width: 0%;
+  background-color: var(--defaultBlack);
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+
+.navItem a:hover::after {
+  content: '';
+  height: 0.5px;
+  width: 100%;
+  background-color: var(--buttonHover);
+  display: block;
+}
+
+.navLogoText {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--defaultBlack);
+}
+
+.navLogoImage {
+  max-height: 80px;
 }

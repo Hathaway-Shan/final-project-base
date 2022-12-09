@@ -21,31 +21,31 @@
   padding: 8px;
   margin: 6px;
   border-radius: 5px;
-  color: black;
+  color: var(--defaultBlack);
   cursor: pointer;
 }
 
 .pageIcon :hover {
-  color: black;
-  background-color: whitesmoke;
+  color: var(--defaultBlack);
+  background-color: var(--defaultWhite);
 }
 
 .paginationActive a {
-  color: black;
-  background-color: whitesmoke;
+  color: var(--defaultBlack);
+  background-color: var(--defaultWhite);
   border: 1px solid white;
 }
 
 .paginationActive a:hover {
-  border: 1px solid black;
+  border: 1px solid var(--defaultBlack);
 }
 
 .paginationBttn {
-  border: 2px solid black;
-  background-color: whitesmoke;
+  border: 2px solid var(--defaultBlack);
+  background-color: var(--defaultWhite);
 }
 
 .paginationBttn:hover {
-  color: whitesmoke;
+  color: var(--defaultWhite);
   background-color: var(--buttonHover);
 }

@@ -3,10 +3,21 @@
 :root {
   --buttonHover: rgb(114, 189, 192);
   --buttonBackground: whitesmoke;
-  --buttonBorder: black;
   --cardBackground: rgb(216, 216, 216);
   --boxShadow: rgb(185, 186, 187);
+  --borderRadius: 0.2rem;
   --placeHolder: cadetblue;
+  --defaultWhite: whiteSmoke;
+  --defaultBlack: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#page-wrap {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 body {
@@ -18,4 +29,12 @@ body {
   );
   color: var(--color);
   margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
