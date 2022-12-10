@@ -27,6 +27,35 @@ export default function Navigation() {
             <a href="#">Sign In</a>
           </li>
         </ul>
+        <hamburger role={styles.navigation}>
+          <div id={styles.menuToggle}>
+            {/* A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it. */}
+
+            <input type="checkbox" />
+
+            {/* Some spans to act as a hamburger. */}
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id={styles.menu}>
+              <a href="#">
+                <li>Home</li>
+              </a>
+              <a href="#">
+                <li>About</li>
+              </a>
+              <a href="#">
+                <li>Sign Up</li>
+              </a>
+              <a href="#">
+                <li>Sign In</li>
+              </a>
+            </ul>
+          </div>
+        </hamburger>
       </nav>
     </header>
   );

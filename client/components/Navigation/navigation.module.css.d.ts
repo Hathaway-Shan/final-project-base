@@ -2,6 +2,10 @@
 // Please do not change this file!
 interface CssExports {
   'header': string;
+  'menu': string;
+  'menuButton': string;
+  'menuIcon': string;
+  'menuToggle': string;
   'navItem': string;
   'navLogoImage': string;
   'navLogoText': string;
