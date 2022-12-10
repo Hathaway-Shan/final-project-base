@@ -200,11 +200,16 @@
     font-size: 22px;
   }
 
+  #menuToggle ul {
+    display: none;
+  }
+
   /*
    * fade it in from the left
    */
 
   #menuToggle input:checked ~ ul {
+    display: block;
     transform: none;
     opacity: 1;
   }
@@ -213,8 +218,6 @@
     #menu {
       transform: none;
       opacity: 0;
-
-      transition: opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
     }
   }
 }
