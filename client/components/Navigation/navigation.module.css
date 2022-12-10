@@ -90,8 +90,8 @@
   #menuToggle {
     display: block;
     position: absolute;
-    top: 50px;
-    right: 0px;
+    top: 2rem;
+    right: 2rem;
 
     z-index: 1;
 
@@ -151,7 +151,7 @@
   #menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
+    background: var(--buttonHover);
   }
 
   /*

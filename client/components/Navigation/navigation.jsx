@@ -27,7 +27,7 @@ export default function Navigation() {
             <a href="#">Sign In</a>
           </li>
         </ul>
-        <hamburger role={styles.navigation}>
+        <div role={styles.navigation}>
           <div id={styles.menuToggle}>
             {/* A fake / hidden checkbox is used as click reciever,
     so you can use the :checked selector on it. */}
@@ -55,7 +55,7 @@ export default function Navigation() {
               </a>
             </ul>
           </div>
-        </hamburger>
+        </div>
       </nav>
     </header>
   );
