@@ -7,7 +7,6 @@ interface CssExports {
   'navLogoText': string;
   'navMenu': string;
   'navbar': string;
-  'opacityLayer': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
