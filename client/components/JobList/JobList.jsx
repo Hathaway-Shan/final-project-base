@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './JobList.module.css';
 import JobCard from '../jobCard/jobCard';
 import ReactPaginate from 'react-paginate';
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
 export default function JobList() {
   //break this out into it's own useJobs hook with state and error
@@ -52,7 +53,7 @@ export default function JobList() {
   if (loading) {
     return (
       <div className={styles.wrapper}>
-        <h3>Loading Jobs...</h3>
+        <LoadingAnimation />
       </div>
     );
   }
