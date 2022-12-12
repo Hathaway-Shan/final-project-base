@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Space+Mono:wght@400;700&display=swap');
 
+/* z-index index 
+#1 Hamburger .opacityLayer
+#2 Hamburger #menu
+#3 Hamburger #menuToggle, Hamburger #menuToggle span
+#4 Hamburger #menuToggle input
+*/
+
 :root {
   --buttonHover: rgb(114, 189, 192);
   --buttonBackground: whitesmoke;
@@ -9,15 +16,7 @@
   --placeHolder: cadetblue;
   --defaultWhite: whiteSmoke;
   --defaultBlack: black;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-#page-wrap {
-  padding-bottom: 10px;
-  padding-top: 10px;
+  --opacity: rgba(0, 0, 0, 0.3);
 }
 
 body {
@@ -37,4 +36,14 @@ li {
 
 a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 765px) {
+  body {
+    background-image: linear-gradient(
+      to top 109.6deg,
+      rgba(156, 252, 248, 1) 11.2%,
+      rgba(110, 123, 251, 1) 91.1%
+    );
+  }
 }

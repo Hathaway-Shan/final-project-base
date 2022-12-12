@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import Hamburger from '../Hamburger/Hamburger';
 import styles from './navigation.module.css';
 // import linkStyles from '../link.module.css';
 
@@ -13,6 +14,7 @@ export default function Navigation() {
           />
         </a>
         <p className={styles.navLogoText}>Jr. Job Board</p>
+        {/* search component goes here*/}
         <ul className={styles.navMenu}>
           <li className={styles.navItem}>
             <a href="#">Home</a>
@@ -21,12 +23,13 @@ export default function Navigation() {
             <a href="#">About</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
           </li>
-          <li className={styles.navItem}>
+          {/* <li className={styles.navItem}>
             <a href="#">Sign In</a>
-          </li>
+          </li> */}
         </ul>
+        <Hamburger />
       </nav>
     </header>
   );
