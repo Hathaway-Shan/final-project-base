@@ -1,7 +1,28 @@
-/* hamburger component break point */
-
 #menuToggle {
   display: none;
+}
+
+.navLinkMobile {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--defaultBlack);
+}
+
+.navLinkMobile:hover {
+  color: var(--buttonHover);
+}
+
+.opacityLayer {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  z-index: 1;
+  margin: -100px 0 0 0;
+  padding: 50px;
+  padding-top: 125px;
+  padding-left: 125px;
+  right: -100px;
+  background: var(--opacity);
 }
 
 @media only screen and (max-width: 765px) {
@@ -11,36 +32,9 @@
 
   /* hamburger transform css */
 
+  /* align menu items center */
   .navItemMobile {
     margin-left: 5rem;
-  }
-
-  .navItemMobile a {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--defaultBlack);
-  }
-
-  .navItemMobile a:hover {
-    color: var(--buttonHover);
-  }
-
-  /* nav menu animation */
-  .navItemMobile a::after {
-    content: '';
-    height: 0.5px;
-    width: 0%;
-    background-color: var(--defaultBlack);
-    display: block;
-    transition: 0.5s ease-in-out;
-  }
-
-  .navItemMobile a:hover::after {
-    content: '';
-    height: 0.5px;
-    width: 100%;
-    background-color: var(--buttonHover);
-    display: block;
   }
 
   body {
@@ -52,7 +46,7 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
-    z-index: 1;
+    z-index: 10;
     -webkit-user-select: none;
     user-select: none;
   }
@@ -66,7 +60,7 @@
     left: -5px;
     cursor: pointer;
     opacity: 0; /* hide this */
-    z-index: 2; /* and place it over the hamburger */
+    z-index: 11; /* and place it over the hamburger */
 
     -webkit-touch-callout: none;
   }
@@ -81,7 +75,7 @@
     position: relative;
     background: var(--buttonHover);
     border-radius: 3px;
-    z-index: 1;
+    z-index: 10;
     transform-origin: 4px 0px;
 
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -129,12 +123,14 @@
    */
   #menu {
     position: absolute;
-    width: 300px;
+    width: 40vh;
+    height: 100vh;
+    z-index: 2;
     margin: -100px 0 0 0;
     padding: 50px;
     padding-top: 125px;
     right: -100px;
-    background: white;
+    background: var(--defaultWhite);
     border-radius: var(--borderRadius);
     list-style-type: none;
     -webkit-font-smoothing: antialiased;

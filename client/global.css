@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Space+Mono:wght@400;700&display=swap');
 
+/* z index index 
+1. opacity layer
+2. Hamburger #menu
+10. Hamburger #menuToggle, Hamburger #menuToggle span
+11. Hamburger #menuToggle input
+
+*/
+
 :root {
   --buttonHover: rgb(114, 189, 192);
   --buttonBackground: whitesmoke;
@@ -9,6 +17,7 @@
   --placeHolder: cadetblue;
   --defaultWhite: whiteSmoke;
   --defaultBlack: black;
+  --opacity: rgba(0, 0, 0, 0.3);
 }
 
 body {

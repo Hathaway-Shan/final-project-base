@@ -5,6 +5,8 @@ interface CssExports {
   'menuButton': string;
   'menuToggle': string;
   'navItemMobile': string;
+  'navLinkMobile': string;
+  'opacityLayer': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
