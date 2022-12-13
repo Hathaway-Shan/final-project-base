@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Hamburger from '../Hamburger/Hamburger';
 import styles from './navigation.module.css';
-import Search from '../Search/Search';
+import Search from '../SearchBar/SearchBar';
 // import linkStyles from '../link.module.css';
 
 export default function Navigation() {
