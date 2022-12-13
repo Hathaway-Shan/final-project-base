@@ -15,9 +15,9 @@ describe('the server', () => {
           {
             id: '1',
             company: 'Test Job 1',
-            position: 'Site Reliability Engineer',
-            link: 'https://remoteok.com/remote-jobs/remote-site-reliability-engineer-sticker-mule-154372',
-            salary: '120k-150k',
+            position: 'Example#1',
+            link: 'https://example.com/example1',
+            salary: '$-$$$',
           },
         ]);
       });
@@ -27,12 +27,11 @@ describe('the server', () => {
       .post('/jobs')
       .send({
         company: 'Test Job 2',
-        position: 'Software Engineer',
-        link: 'https://remoteok.com/remote-jobs/remote-software-engineer-mulligan-funding-146013',
-        salary: '70k-120k',
+        position: 'Example#2',
+        link: 'https://example.com/example2',
+        salary: '$-$$$',
       })
       .then((res) => {
-        // console.log('RESPONSE BODY IS', res.body); //returns expected
         expect(res.status).toBe(200);
       });
   });
