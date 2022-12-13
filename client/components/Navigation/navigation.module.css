@@ -67,4 +67,7 @@
   .navMenu {
     display: none;
   }
+  .navLogoText {
+    display: none;
+  }
 }

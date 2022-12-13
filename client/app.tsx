@@ -4,6 +4,7 @@ import './reset.css';
 import './light-theme.css';
 import './dark-theme.css';
 import './global.css';
+import { JobProvider } from './context/JobContext';
 import catListFn from './components/LoganFiles/cat-list';
 import Layout from './components/Layout/layout';
 import {
@@ -21,14 +22,15 @@ const root = createRoot(container);
 root.render(
   // <React.StrictMode>
   <Router>
-    <Routes>
-      <Route element={<Layout />}>
-        <Route index element={<JobList />} />
+    <JobProvider>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<JobList />} />
 
-        <Route path="cats" element={<CatList />} />
-        {/* <Route path="jobs" element={<JobList />} /> */}
-      </Route>
-    </Routes>
+          <Route path="cats" element={<CatList />} />
+        </Route>
+      </Routes>
+    </JobProvider>
   </Router>
   // </React.StrictMode>
 );

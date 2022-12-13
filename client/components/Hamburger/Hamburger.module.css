@@ -32,8 +32,8 @@
 
   /* hamburger transform css */
 
-  /* align menu items center */
   .navItemMobile {
+    /* align menu items center */
     margin-left: 5rem;
   }
 
@@ -123,7 +123,7 @@
    */
   #menu {
     position: absolute;
-    width: 40vh;
+    width: 20rem;
     height: 100vh;
     z-index: 2;
     margin: -100px 0 0 0;

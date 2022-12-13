@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './jobCard.module.css';
+import styles from './JobCard.module.css';
 
 export default function JobCard(props) {
   let jobImagePath = '';
