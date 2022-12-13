@@ -8,7 +8,6 @@ import { useJobs } from '../../context/JobContext';
 
 export default function JobList() {
   const { jobsFilterArr, error, loading } = useJobs();
-  //search logic begins here
 
   //pagination logic begins here
 

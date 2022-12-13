@@ -16,7 +16,6 @@ export default function Navigation() {
         </a>
         <p className={styles.navLogoText}>Jr. Job Board</p>
         <Search placeholder={'search jobs here...'} />
-        {/* search component goes here*/}
         <ul className={styles.navMenu}>
           <li className={styles.navItem}>
             <a href="#">Home</a>
@@ -27,9 +26,6 @@ export default function Navigation() {
           <li className={styles.navItem}>
             <a href="#">Login</a>
           </li>
-          {/* <li className={styles.navItem}>
-            <a href="#">Sign In</a>
-          </li> */}
         </ul>
         <Hamburger />
       </nav>

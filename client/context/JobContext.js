@@ -45,7 +45,6 @@ export const JobProvider = ({ children }) => {
           .includes(searchTerm.toLowerCase()) ||
         job.salary.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    console.log('FILTERED JOBS IS: ', filteredJobs);
     setJobsFilterArr(filteredJobs);
   };
   const value = {
