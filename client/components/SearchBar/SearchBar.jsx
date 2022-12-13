@@ -1,23 +1,24 @@
 import { useState } from 'react';
+import { useJobs } from '../../context/JobContext';
 import JobList from '../JobList/JobList';
 import styles from './SearchBar.module.css';
 
 export default function Search() {
-  const [searchInput, setSearchInput] = useState(
-    'search for jobs...'
-  );
+  const { setSearchTerm, searchTerm, filterJobs } = useJobs();
+
   const searchJobs = (searchValue) => {
-    setSearchInput(searchValue);
+    setSearchTerm(searchValue);
   };
+
   return (
     <div className={styles.search}>
       <div className={styles.searchInput}>
         <input
           type="text"
-          placeholder={searchInput}
+          placeholder={searchTerm}
           onChange={(e) => searchJobs(e.target.value)}
         ></input>
-        <a className={styles.searchButton}>
+        <a className={styles.searchButton} onClick={filterJobs}>
           <img
             className={styles.searchIcon}
             src="/images/magnifying-glass.png"

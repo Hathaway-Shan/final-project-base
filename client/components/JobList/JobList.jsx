@@ -4,25 +4,26 @@ import styles from './JobList.module.css';
 import JobCard from '../JobCard/JobCard';
 import ReactPaginate from 'react-paginate';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
-import useJobs from '../../hooks/useJobs';
+import { useJobs } from '../../context/JobContext';
 
 export default function JobList() {
-  const { jobs, loading, error } = useJobs();
+  const { jobsFilterArr, error, loading } = useJobs();
+  //search logic begins here
 
   //pagination logic begins here
 
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
   const jobsPerPage = 12;
   const pagesVisited = pageNumber * jobsPerPage; //returns 0*12, 1*12 etc
-  const pageCount = Math.ceil(jobs.length / jobsPerPage); //accounts for indivisible number of pages
+  const pageCount = Math.ceil(jobsFilterArr.length / jobsPerPage); //accounts for indivisible number of pages
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
 
-  const displayJobs = jobs
+  const displayJobs = jobsFilterArr
     .slice(pagesVisited, pagesVisited + jobsPerPage)
     .map((job) => {
-      return jobs && <JobCard key={job.id} {...job} />;
+      return jobsFilterArr && <JobCard key={job.id} {...job} />;
     });
 
   if (error != '') {
