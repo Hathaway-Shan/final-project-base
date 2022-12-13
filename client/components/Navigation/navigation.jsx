@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Hamburger from '../Hamburger/Hamburger';
 import styles from './navigation.module.css';
+import Search from '../Search/Search';
 // import linkStyles from '../link.module.css';
 
 export default function Navigation() {
@@ -14,6 +15,7 @@ export default function Navigation() {
           />
         </a>
         <p className={styles.navLogoText}>Jr. Job Board</p>
+        <Search placeholder={'search jobs here...'} />
         {/* search component goes here*/}
         <ul className={styles.navMenu}>
           <li className={styles.navItem}>
