@@ -1,4 +1,4 @@
-import Job from './server/models/Jobs.js';
+import Job from '../server/models/Jobs.js';
 import browserObject from './browser.js';
 import pageScraper from './pageScraper.js';
 
