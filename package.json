@@ -17,7 +17,7 @@
     "build:web": "webpack --devtool source-map",
     "build:server": "tsc -p server",
     "build": "npm-run-all --parallel build:web build:server",
-    "scrape": "ts-node --esm index.js"
+    "scrape": "ts-node --esm scraperHead.js"
   },
   "keywords": [],
   "author": "",
