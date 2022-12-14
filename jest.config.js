@@ -6,13 +6,10 @@ export default {
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect',
     './setup-tests-after.ts',
+    '<rootDir>/jest.env.js',
   ],
-  "moduleFileExtensions": [
-    "js",
-    "jsx",
-    "tsx",
-    "ts"
-  ],
+  moduleFileExtensions: ['js', 'jsx', 'tsx', 'ts'],
+
   maxWorkers: 1,
   moduleNameMapper: {
     '\\.(css)$': 'identity-obj-proxy',
@@ -34,7 +31,7 @@ export default {
     '/public', // Do not test files we've transpiled.
   ],
   transform: {
-    '^.+\\.tsx?': [ 'ts-jest', { useESM: true } ],
+    '^.+\\.tsx?': ['ts-jest', { useESM: true }],
     '^.+\\.jsx?': 'babel-jest',
   },
-}
+};

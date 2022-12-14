@@ -1,7 +1,7 @@
 -- Use this file to define your SQL tables.
 -- The SQL in this file will be executed when you run `npm run setup-db`.
 
-DROP TABLE IF EXISTS jobs, site_users, users_jobs;
+DROP TABLE IF EXISTS jobs, users, users_jobs CASCADE;
 
 
 CREATE TABLE jobs (
@@ -12,19 +12,19 @@ CREATE TABLE jobs (
   salary VARCHAR
 );
 
-CREATE TABLE site_users (
+CREATE TABLE users (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   email VARCHAR NOT NULL UNIQUE,
   password_hash VARCHAR NOT NULL
 );
 
-CREATE TABLE users_jobs (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  user_id BIGINT,
-  job_id BIGINT,
-  FOREIGN KEY (user_id) REFERENCES site_users(id),
-  FOREIGN KEY (job_id) REFERENCES jobs(id)
-);
+-- CREATE TABLE users_jobs (
+--   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   user_id BIGINT,
+--   job_id BIGINT,
+--   FOREIGN KEY (user_id) REFERENCES site_users(id),
+--   FOREIGN KEY (job_id) REFERENCES jobs(id)
+-- );
 
 
 

@@ -23,15 +23,37 @@ export default class Users {
     return new Users(rows[0]);
   }
 
+  static async getAll() {
+    const { rows } = await pool.query('SELECT * FROM users');
+
+    return rows.map((row) => new User(row));
+  }
+
+  static async getById(id) {
+    const { rows } = await pool.query(
+      `
+      SELECT *
+      FROM users
+      WHERE id=$1
+      `,
+      [id]
+    );
+    return new User(rows[0]);
+  }
+
   static async getByEmail(email) {
     const { rows } = await pool.query(
       `
-      SELECT * FROM users
-      WHERE email = $1
+      SELECT *
+      FROM users
+      WHERE email=$1
       `,
       [email]
     );
-    return new Users(rows[0]);
+
+    if (!rows[0]) return null;
+
+    return new User(rows[0]);
   }
 
   get passwordHash() {

@@ -5,7 +5,6 @@ import './light-theme.css';
 import './dark-theme.css';
 import './global.css';
 import { JobProvider } from './context/JobContext';
-import catListFn from './components/LoganFiles/cat-list';
 import Layout from './components/Layout/layout';
 import {
   Route,

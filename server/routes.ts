@@ -12,11 +12,13 @@ import express, { type Router } from 'express';
 // files on the server side.
 
 import jobsController from './controllers/jobs.js';
+import usersController from './controllers/users.js';
 
 export default (): Router => {
   const prefixRouter = express.Router();
 
   prefixRouter.use('/jobs', jobsController);
+  prefixRouter.use('/users', usersController);
 
   return prefixRouter;
 };

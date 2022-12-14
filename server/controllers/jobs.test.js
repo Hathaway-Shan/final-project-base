@@ -1,9 +1,9 @@
 import request from 'supertest';
 import app from '../app';
 import { describe, expect, it } from '@jest/globals';
-import setupDb from '../setup-data.js';
+import setupDb from '../setup-data.ts';
 
-describe('the server', () => {
+describe('jobs', () => {
   beforeEach(() => {
     return setupDb();
   });
