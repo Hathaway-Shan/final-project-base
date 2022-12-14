@@ -34,19 +34,20 @@ describe('users', () => {
     return setupDb();
   });
 
-  it('POST /api/v1/users creates a new user', async () => {
-    const res = await request(app).post('/users').send(mockUser);
-    console.log('RES IS: ', res);
-    const { email } = mockUser;
-    expect(res.body).toEqual({
-      id: expect.any(String),
-      email,
-    });
+  it('POST /users creates a new user', () => {
+    return request(app)
+      .post('/users')
+      .send(mockUser)
+      .then((res) => {
+        console.log('RES IS: ', res);
+        expect(res.status).toBe(200);
+      });
   });
 
-  it('GET /api/v1/users/me returns the current user', async () => {
+  it('GET /users/me returns the current user', async () => {
     const [agent, user] = await registerAndLogin();
     const me = await agent.get('/users/me');
+    console.log('ME.BODY', me.body);
     expect(me.body).toEqual({
       ...user,
       exp: expect.any(Number),
@@ -54,11 +55,11 @@ describe('users', () => {
     });
   });
 
-  it('DELETE /api/v1/users/sessions deletes the user session', async () => {
+  it('DELETE /users/sessions deletes the user session', async () => {
     const [agent] = await registerAndLogin();
-    const me = await agent.get('/api/v1/users/me');
+    const me = await agent.get('/users/me');
     expect(me.status).toBe(200);
-    const resp = await agent.delete('/api/v1/users/sessions');
+    const resp = await agent.delete('/users/sessions');
     expect(resp.status).toBe(204);
   });
 });
