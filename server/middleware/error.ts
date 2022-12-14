@@ -3,12 +3,12 @@ import {
   type Response,
   type NextFunction,
   type ErrorRequestHandler,
-} from 'express'
+} from 'express';
 const handler: ErrorRequestHandler = (
   err: any,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) => {
   const status = err.status || 500;
 
@@ -25,4 +25,4 @@ const handler: ErrorRequestHandler = (
   });
 };
 
-export default handler
+export default handler;

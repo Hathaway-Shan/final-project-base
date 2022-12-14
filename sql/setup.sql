@@ -22,6 +22,7 @@ CREATE TABLE users (
 --   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 --   user_id BIGINT,
 --   job_id BIGINT,
+--   applied_for BOOLEAN DEFAULT false,
 --   FOREIGN KEY (user_id) REFERENCES site_users(id),
 --   FOREIGN KEY (job_id) REFERENCES jobs(id)
 -- );

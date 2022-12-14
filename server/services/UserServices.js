@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import User from '../models/Users';
+import User from '../models/Users.js';
 
 export default class UserService {
   static async create({ email, password }) {
@@ -11,7 +11,6 @@ export default class UserService {
     if (password.length < 6) {
       throw new Error('Password must be at least 6 characters long');
     }
-    console.log('INSIDE USER SERVICE', password, email);
     const passwordHash = await bcrypt.hash(
       password,
       Number(process.env.SALT_ROUNDS)

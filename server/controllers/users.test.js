@@ -23,10 +23,14 @@ const registerAndLogin = async (userProps = {}) => {
 
   // ...then sign in
   const { email } = user;
-  await agent
-    .post('/api/v1/users/sessions')
+  const res = await agent
+    .post('/users/sessions')
     .send({ email, password });
-  return [agent, user];
+  if (res.ok) {
+    return [agent, user];
+  } else {
+    throw new Error(res.body);
+  }
 };
 
 describe('users', () => {
@@ -34,20 +38,20 @@ describe('users', () => {
     return setupDb();
   });
 
-  it('POST /users creates a new user', () => {
-    return request(app)
-      .post('/users')
-      .send(mockUser)
-      .then((res) => {
-        console.log('RES IS: ', res);
-        expect(res.status).toBe(200);
-      });
+  it('POST /users creates and logs in a new user', async () => {
+    const res = await request(app).post('/users').send(mockUser);
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      message: 'Successfully logged in with new account!',
+    });
   });
 
   it('GET /users/me returns the current user', async () => {
     const [agent, user] = await registerAndLogin();
+
     const me = await agent.get('/users/me');
-    console.log('ME.BODY', me.body);
+
     expect(me.body).toEqual({
       ...user,
       exp: expect.any(Number),

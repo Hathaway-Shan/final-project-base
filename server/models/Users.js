@@ -1,6 +1,6 @@
 import pool from '../database.js';
 
-export default class Users {
+export default class User {
   id;
   email;
   #passwordHash;
@@ -20,7 +20,7 @@ export default class Users {
       `,
       [email, passwordHash]
     );
-    return new Users(rows[0]);
+    return new User(rows[0]);
   }
 
   static async getAll() {
@@ -53,7 +53,9 @@ export default class Users {
 
     if (!rows[0]) return null;
 
-    return new User(rows[0]);
+    const newUser = new User(rows[0]);
+
+    return newUser;
   }
 
   get passwordHash() {
