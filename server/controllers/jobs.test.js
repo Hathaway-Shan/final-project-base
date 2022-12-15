@@ -9,7 +9,14 @@ describe('jobs', () => {
   });
   it('#get /jobs returns a list of jobs', () => {
     return request(app)
-      .get('/jobs')
+      .post('/jobs')
+      .send({
+        company: 'Test Job 1',
+        position: 'Example#1',
+        link: 'https://example.com/example1',
+        salary: '$-$$',
+      })
+      .then(() => request(app).get('/jobs'))
       .then((res) => {
         expect(res.body).toEqual([
           {
@@ -17,7 +24,7 @@ describe('jobs', () => {
             company: 'Test Job 1',
             position: 'Example#1',
             link: 'https://example.com/example1',
-            salary: '$-$$$',
+            salary: '$-$$',
           },
         ]);
       });
