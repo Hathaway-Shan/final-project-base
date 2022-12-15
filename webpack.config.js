@@ -34,7 +34,9 @@ export default {
   // bundling process starts.
   entry: './client/app.tsx',
   mode:
-    process.env.NODE === 'production' ? 'production' : 'development',
+    process.env.NODE_ENV === 'production'
+      ? 'production'
+      : 'development',
   // This indicates how and where the final output is bundled.
   output: {
     filename: 'bundle.[contenthash].js',
@@ -167,7 +169,10 @@ export default {
           {
             loader: 'css-modules-typescript-loader',
             options: {
-              mode: process.env.CI ? 'verify' : 'emit',
+              mode:
+                process.env.CI || process.env.NODE_ENV == 'production'
+                  ? 'verify'
+                  : 'emit',
             },
           },
           {

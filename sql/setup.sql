@@ -1,19 +1,36 @@
 -- Use this file to define your SQL tables.
 -- The SQL in this file will be executed when you run `npm run setup-db`.
 
-drop table if exists jobs;
+DROP TABLE IF EXISTS jobs, users, users_jobs CASCADE;
 
 
-create table jobs (
-  id bigint generated always as identity primary key,
-  company varchar,
-  position varchar,
-  link varchar,
-  salary varchar
+CREATE TABLE jobs (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  company VARCHAR,
+  position VARCHAR,
+  link VARCHAR,
+  salary VARCHAR
 );
 
-insert into
+CREATE TABLE users (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  email VARCHAR NOT NULL UNIQUE,
+  password_hash VARCHAR NOT NULL
+);
+
+-- CREATE TABLE users_jobs (
+--   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+--   user_id BIGINT,
+--   job_id BIGINT,
+--   applied_for BOOLEAN DEFAULT false,
+--   FOREIGN KEY (user_id) REFERENCES site_users(id),
+--   FOREIGN KEY (job_id) REFERENCES jobs(id)
+-- );
+
+
+
+INSERT INTO
   jobs (company, position, link, salary)
-values
-  ('Test Job 1', 'Site Reliability Engineer', 'https://remoteok.com/remote-jobs/remote-site-reliability-engineer-sticker-mule-154372', '120k-150k')
+VALUES
+  ('Test Job 1', 'Example#1', 'https://example.com/example1', '$-$$$')
   ;

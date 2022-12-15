@@ -5,7 +5,6 @@ import './light-theme.css';
 import './dark-theme.css';
 import './global.css';
 import { JobProvider } from './context/JobContext';
-import catListFn from './components/LoganFiles/cat-list';
 import Layout from './components/Layout/layout';
 import {
   Route,
@@ -14,7 +13,6 @@ import {
 } from 'react-router-dom';
 import JobList from './components/JobList/JobList';
 
-const CatList = catListFn();
 const container =
   document.getElementById('app') || document.createElement('div');
 container.id = 'app';
@@ -26,8 +24,6 @@ root.render(
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<JobList />} />
-
-          <Route path="cats" element={<CatList />} />
         </Route>
       </Routes>
     </JobProvider>
