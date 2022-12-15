@@ -16,7 +16,7 @@
     "start:web:watch": "npm run start",
     "build:web": "webpack --devtool source-map",
     "build:server": "tsc -p server",
-    "build": "git show-ref HEAD; npm-run-all --parallel build:web build:server",
+    "build": "npm-run-all --parallel build:web build:server",
     "scrape": "ts-node --esm scraper/scraperHead.js"
   },
   "keywords": [],
