@@ -15,7 +15,7 @@ import pageScraper from './pageScraper.js';
   scrapedData.forEach((element) => {
     Job.insert(element);
     jobsInserted++;
-    console.log(`${jobsInserted} job successfully inserted`);
+    console.log(`\r${jobsInserted} job successfully inserted`);
   });
 
   console.log(`${jobsInserted} jobs added to DB`);

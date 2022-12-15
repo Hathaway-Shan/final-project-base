@@ -26,3 +26,6 @@ logfile
 
 # Ignore environment variables files.
 .env
+
+# ignore enviorment variables from local to heroku
+.env.heroku
