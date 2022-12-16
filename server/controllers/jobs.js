@@ -8,4 +8,7 @@ export default Router()
   })
   .post('/', async (req, res) => {
     return Job.insert(req.body).then((result) => res.json(result));
+  })
+  .post('/', async (req, res) => {
+    return Job.upsert(req.body).then((result) => res.json(result));
   });
