@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import styles from './JobList.module.css';
 import JobCard from '../JobCard/JobCard';
+import AstroNaught from '../AstroNaught/AstroNaught';
 import ReactPaginate from 'react-paginate';
 import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 import { useJobs } from '../../context/JobContext';
@@ -19,6 +20,8 @@ export default function JobList() {
     setPageNumber(selected);
   };
 
+  console.log('JOBS FILTER ARR IS: ', jobsFilterArr);
+
   const displayJobs = jobsFilterArr
     .slice(pagesVisited, pagesVisited + jobsPerPage)
     .map((job) => {
@@ -33,6 +36,14 @@ export default function JobList() {
     return (
       <div className={styles.wrapper}>
         <LoadingAnimation />
+      </div>
+    );
+  }
+
+  if (jobsFilterArr.length === 0) {
+    return (
+      <div className={styles.wrapper}>
+        <AstroNaught />
       </div>
     );
   }
