@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './AstroNaught.module.css';
 
 export default function AstroNaught() {
+  //I will not be taking questions on the name of this file at this time
   return (
     <div className={styles.failToFindCard}>
       <img
