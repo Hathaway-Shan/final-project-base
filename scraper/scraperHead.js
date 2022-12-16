@@ -13,7 +13,7 @@ import pageScraper from './pageScraper.js';
   //around here is where we should stuff it into the DB
   // console.log('SCRAPED DATA IS: ', scrapedData);
   scrapedData.forEach((element) => {
-    Job.insert(element);
+    Job.upsert(element);
     jobsInserted++;
     console.log(`\r${jobsInserted} job successfully inserted`);
   });

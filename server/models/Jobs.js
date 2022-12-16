@@ -26,4 +26,11 @@ export default class Job {
     );
     return new Job(rows[0]);
   }
+  static async upsert({ company, position, link, salary }) {
+    const { rows } = await pool.query(
+      `INSERT INTO jobs (company, position, link, salary) values ($1, $2, $3, $4) ON CONFLICT (link) DO UPDATE SET company = $1, position = $2, salary = $4 returning *`,
+      [company, position, link, salary]
+    );
+    return new Job(rows[0]);
+  }
 }

@@ -8,7 +8,7 @@ CREATE TABLE jobs (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   company VARCHAR,
   position VARCHAR,
-  link VARCHAR,
+  link VARCHAR UNIQUE,
   salary VARCHAR
 );
 
