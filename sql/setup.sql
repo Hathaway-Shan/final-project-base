@@ -29,8 +29,8 @@ CREATE TABLE users (
 
 
 
-INSERT INTO
-  jobs (company, position, link, salary)
-VALUES
-  ('Test Job 1', 'Example#1', 'https://example.com/example1', '$-$$$')
-  ;
+-- INSERT INTO
+--   jobs (company, position, link, salary)
+-- VALUES
+--   ('Test Job 1', 'Example#1', 'https://example.com/example1', '$-$$$')
+--   ;

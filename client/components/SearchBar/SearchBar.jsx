@@ -6,6 +6,12 @@ import styles from './SearchBar.module.css';
 export default function Search() {
   const { setSearchTerm, searchTerm, filterJobs } = useJobs();
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      filterJobs(searchTerm);
+    }
+  };
+
   const searchJobs = (searchValue) => {
     setSearchTerm(searchValue);
   };
@@ -17,6 +23,7 @@ export default function Search() {
           type="text"
           placeholder={searchTerm}
           onChange={(e) => searchJobs(e.target.value)}
+          onKeyDown={handleKeyDown}
         ></input>
         <a className={styles.searchButton} onClick={filterJobs}>
           <img
