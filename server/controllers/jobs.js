@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import db from '../database.js';
 import Job from '../models/Jobs.js';
+// import promisifyRequest from './promiseErrorHandling.js';
 
 export default Router()
   .get('/', (req, res, next) => {
@@ -9,10 +10,7 @@ export default Router()
   .post('/', async (req, res) => {
     return Job.insert(req.body).then((result) => res.json(result));
   })
-  // .post('/upsert', async (req, res) => {
-  //   return Job.upsert(req.body).then((result) => res.json(result));
-  // })
-  .post('/upsert', async (req, res) => {
+  .post('/upsert', (req, res) => {
     return Job.upsert(req.body)
       .then((result) => res.json(result))
       .catch((error) => {

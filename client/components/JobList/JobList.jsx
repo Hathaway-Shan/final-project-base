@@ -20,8 +20,6 @@ export default function JobList() {
     setPageNumber(selected);
   };
 
-  console.log('JOBS FILTER ARR IS: ', jobsFilterArr);
-
   const displayJobs = jobsFilterArr
     .slice(pagesVisited, pagesVisited + jobsPerPage)
     .map((job) => {
