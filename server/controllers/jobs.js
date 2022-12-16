@@ -9,6 +9,14 @@ export default Router()
   .post('/', async (req, res) => {
     return Job.insert(req.body).then((result) => res.json(result));
   })
-  .post('/', async (req, res) => {
-    return Job.upsert(req.body).then((result) => res.json(result));
+  // .post('/upsert', async (req, res) => {
+  //   return Job.upsert(req.body).then((result) => res.json(result));
+  // })
+  .post('/upsert', async (req, res) => {
+    return Job.upsert(req.body)
+      .then((result) => res.json(result))
+      .catch((error) => {
+        console.error('error handling request', error);
+        res.status(500).send('internal server error');
+      });
   });

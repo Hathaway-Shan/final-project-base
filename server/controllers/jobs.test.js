@@ -10,6 +10,13 @@ const testJob = {
   salary: '$-$$',
 };
 
+const testJob2 = {
+  company: 'Upsert',
+  position: 'Example#2',
+  link: 'https://example.com/example1',
+  salary: '$$-$$$',
+};
+
 describe('jobs', () => {
   beforeEach(() => {
     return setupDb();
@@ -39,18 +46,23 @@ describe('jobs', () => {
         expect(res.status).toBe(200);
       });
   });
-  it.only('#post /jobs does not add entries with duplicate urls', () => {
+  it('#post /jobs does not add entries with duplicate urls', () => {
     return request(app)
       .post('/jobs')
       .send(testJob)
-      .then(() => request(app).post('/jobs').send(testJob))
-      .then(
-        request(app)
-          .get('/jobs')
-          .then((res) => {
-            console.log('RES BODY IS: ', res.body);
-            expect(res.body.length).toBe(1);
-          })
-      );
+      .then(() => request(app).post('/jobs/upsert').send(testJob2))
+      .then(() => request(app).get('/jobs'))
+      .then((res) => {
+        expect(res.body.length).toBe(1);
+        expect(res.body).toStrictEqual([
+          {
+            id: '1',
+            company: 'Upsert',
+            position: 'Example#2',
+            link: 'https://example.com/example1',
+            salary: '$$-$$$',
+          },
+        ]);
+      });
   });
 });
