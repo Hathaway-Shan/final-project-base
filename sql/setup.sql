@@ -34,3 +34,9 @@ CREATE TABLE users (
 -- VALUES
 --   ('Test Job 1', 'Example#1', 'https://example.com/example1', '$-$$$')
 --   ;
+
+  INSERT INTO
+  users (email, password_hash)
+  VALUES
+  ('existinguser@example.com', '$2b$10$j8yE9VueWx6DL8DDkDCPBugk8Ho8xFforCdx025HHxDcnmANYrwK2')
+  ;
