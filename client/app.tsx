@@ -12,6 +12,7 @@ import {
   Routes,
 } from 'react-router-dom';
 import JobList from './components/JobList/JobList';
+import AuthPage from './components/AuthPage/AuthPage';
 
 const container =
   document.getElementById('app') || document.createElement('div');
@@ -23,7 +24,8 @@ root.render(
     <JobProvider>
       <Routes>
         <Route element={<Layout />}>
-          <Route index element={<JobList />} />
+          <Route path="/" element={<JobList />} />
+          <Route path="/auth/:type" element={<AuthPage />} />
         </Route>
       </Routes>
     </JobProvider>

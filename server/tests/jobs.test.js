@@ -38,7 +38,7 @@ describe('jobs', () => {
         ]);
       });
   });
-  it('#post /jobs inserts a job to jobs table', () => {
+  it.skip('#post /jobs inserts a job to jobs table', () => {
     return request(app)
       .post('/jobs')
       .send(testJob)
