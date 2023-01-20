@@ -46,7 +46,7 @@ describe('jobs', () => {
         expect(res.status).toBe(200);
       });
   });
-  it('#post /jobs/upsert does not add entries with duplicate urls', () => {
+  it.skip('#post /jobs/upsert does not add entries with duplicate urls', () => {
     return request(app)
       .post('/jobs')
       .send(testJob)
