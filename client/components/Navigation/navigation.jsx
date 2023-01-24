@@ -24,7 +24,7 @@ export default function Navigation() {
             <a href="#">About</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#">Login</a>
+            <a href="/auth/signup">Login</a>
           </li>
         </ul>
         <Hamburger />
