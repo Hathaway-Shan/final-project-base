@@ -20,10 +20,13 @@ export default function AuthPage() {
         <form className={styles.form} onSubmit={handleSignIn}>
           <h1 className={styles.formTitle}>Sign Up</h1>
           <p className={styles.formDescription}>
-            Users can pin jobs to their own boards, as well as save
-            notes about them.
+            Already have an account?{' '}
+            <a href="/auth/signin">Sign In</a> here!
           </p>
           <div className={styles.formGroup}>
+            <label htmlFor="email" className={styles.formLabel}>
+              Email
+            </label>
             <input
               name="email"
               type="text"
@@ -31,8 +34,8 @@ export default function AuthPage() {
               placeholder=""
               autoComplete="off"
             ></input>
-            <label htmlFor="email" className={styles.formLabel}>
-              Email
+            <label htmlFor="password" className={styles.formLabel}>
+              Password
             </label>
             <input
               name="password"
@@ -40,10 +43,7 @@ export default function AuthPage() {
               className={styles.formInput}
               placeholder=""
             ></input>
-            <label htmlFor="password" className={styles.formLabel}>
-              Password
-            </label>
-            <button className={styles.formButton}>sign in</button>
+            <a className={styles.formButton}>sign in</a>
           </div>
         </form>
       </div>

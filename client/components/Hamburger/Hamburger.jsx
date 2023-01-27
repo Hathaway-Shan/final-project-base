@@ -28,13 +28,13 @@ export default function Hamburger() {
         <span></span>
 
         <ul id={styles.menu}>
-          <a className={styles.navLinkMobile} href="#">
+          <a className={styles.navLinkMobile} href="/">
             <li className={styles.navItemMobile}>Home</li>
           </a>
           <a className={styles.navLinkMobile} href="#">
             <li className={styles.navItemMobile}>About</li>
           </a>
-          <a className={styles.navLinkMobile} href="#">
+          <a className={styles.navLinkMobile} href="/auth/signup">
             <li className={styles.navItemMobile}>Login</li>
           </a>
         </ul>

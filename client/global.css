@@ -8,6 +8,7 @@
 */
 
 :root {
+  --lighterHover: rgb(164, 240, 243);
   --buttonHover: rgb(114, 189, 192);
   --buttonBackground: whitesmoke;
   --cardBackground: rgb(216, 216, 216);

@@ -18,7 +18,7 @@ export default function Navigation() {
         <Search placeholder={'search jobs here...'} />
         <ul className={styles.navMenu}>
           <li className={styles.navItem}>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
           <li className={styles.navItem}>
             <a href="#">About</a>
