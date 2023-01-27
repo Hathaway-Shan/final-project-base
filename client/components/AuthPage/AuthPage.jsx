@@ -43,7 +43,9 @@ export default function AuthPage() {
               className={styles.formInput}
               placeholder=""
             ></input>
-            <a className={styles.formButton}>sign in</a>
+            <a className={styles.formButton} onClick={handleSignIn}>
+              sign in
+            </a>
           </div>
         </form>
       </div>
