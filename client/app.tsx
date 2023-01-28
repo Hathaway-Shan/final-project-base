@@ -12,6 +12,8 @@ import {
   Routes,
 } from 'react-router-dom';
 import JobList from './components/JobList/JobList';
+import AuthPage from './components/AuthPage/AuthPage';
+import { UserProvider } from './context/userContext';
 
 const container =
   document.getElementById('app') || document.createElement('div');
@@ -20,13 +22,16 @@ const root = createRoot(container);
 root.render(
   // <React.StrictMode>
   <Router>
-    <JobProvider>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route index element={<JobList />} />
-        </Route>
-      </Routes>
-    </JobProvider>
+    <UserProvider>
+      <JobProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<JobList />} />
+            <Route path="/auth/:type" element={<AuthPage />} />
+          </Route>
+        </Routes>
+      </JobProvider>
+    </UserProvider>
   </Router>
   // </React.StrictMode>
 );

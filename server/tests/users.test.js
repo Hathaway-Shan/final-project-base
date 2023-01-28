@@ -8,6 +8,11 @@ const mockUser = {
   password: '123456',
 };
 
+const existingUser = {
+  email: 'existinguser@example.com',
+  password: 'iexist123',
+};
+
 const registerAndLogin = async (userProps = {}) => {
   const password = userProps.password ?? mockUser.password;
 
@@ -47,11 +52,21 @@ describe('users', () => {
     });
   });
 
+  it('POST /users/sessions signs in an existing user', async () => {
+    const res = await request(app)
+      .post('/users/sessions')
+      .send(existingUser);
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      message: 'Successfully signed in!',
+    });
+  });
+
   it('GET /users/me returns the current user', async () => {
     const [agent, user] = await registerAndLogin();
 
     const me = await agent.get('/users/me');
-
     expect(me.body).toEqual({
       ...user,
       exp: expect.any(Number),
