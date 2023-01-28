@@ -5,7 +5,6 @@ const authenticate = (req, res, next) => {
     const cookie = req.cookies[process.env.COOKIE_NAME];
     if (!cookie) throw new Error('You must be singed in to continue');
     const user = jwt.verify(cookie, process.env.JWT_SECRET);
-
     req.user = user;
     next();
   } catch (e) {

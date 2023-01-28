@@ -9,7 +9,7 @@ export async function getAllJobs() {
     },
     credentials: 'include',
   });
-  console.log('RESPONSE IS: ', response);
+
   if (response.ok) {
     const jobList = await response.json();
     return jobList;

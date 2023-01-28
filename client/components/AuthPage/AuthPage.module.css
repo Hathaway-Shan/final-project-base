@@ -57,7 +57,6 @@
 }
 
 .formButton {
-  width: 3rem;
   display: block;
   outline: none;
   font-size: 16px;
@@ -67,7 +66,7 @@
   background-color: var(--defaultWhite);
   padding: 1rem;
   margin-top: 1.5rem;
-  margin-left: 9.5rem;
+  margin-left: 9.25rem;
   border: 2px solid var(--defaultBlack);
   border-radius: 5px;
   cursor: pointer;

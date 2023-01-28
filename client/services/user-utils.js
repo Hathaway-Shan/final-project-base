@@ -11,9 +11,7 @@ export async function signUpUser(userInfo) {
     body: JSON.stringify(userInfo),
   });
   const data = await response.json();
-  if (response.ok) {
-    location.replace('/');
-  } else {
+  if (!response.ok) {
     console.error(data.message);
   }
 }
@@ -28,11 +26,9 @@ export async function signInUser(userInfo) {
     credentials: 'include',
     body: JSON.stringify(userInfo),
   });
-  const data = response.json();
+  const data = await response.json();
 
-  if (response.ok) {
-    location.replace('/');
-  } else {
+  if (!response.ok) {
     console.error(data.message);
   }
 }
@@ -46,13 +42,13 @@ export async function getUser() {
     },
     credentials: 'include',
   });
-  const data = response.json();
+  // const data = await response.json(); //can't json twice dummy
 
-  if (response.okay) {
+  if (response.ok) {
     const user = await response.json();
     return user;
   } else {
-    console.error(data.message);
+    console.error(response.message);
   }
 }
 
