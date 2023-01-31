@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:7891/api/v1';
+const BASE_URL = '/api/v1'; //removed hard reference to localhost for heroku deploy
 
 export async function getAllJobs() {
   const response = await fetch(`${BASE_URL}/jobs`, {
