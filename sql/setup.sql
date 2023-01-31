@@ -20,11 +20,10 @@ CREATE TABLE users (
 
 -- CREATE TABLE users_jobs (
 --   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
---   user_id BIGINT,
---   job_id BIGINT,
---   applied_for BOOLEAN DEFAULT false,
---   FOREIGN KEY (user_id) REFERENCES site_users(id),
---   FOREIGN KEY (job_id) REFERENCES jobs(id)
+--   user_id INT NOT NULL,
+--   job_id INT NOT NULL,
+--   FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE CASCADE,
+--   FOREIGN KEY (job_id) REFERENCES jobs(id) ON UPDATE CASCADE
 -- );
 
 
