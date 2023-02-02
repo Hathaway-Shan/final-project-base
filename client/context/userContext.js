@@ -10,23 +10,25 @@ const UserContext = createContext();
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState();
-  const [doneGettingUser, setDoneGettingUser] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const data = await getUser();
         setUser(data);
-        setDoneGettingUser(true);
+        setLoading(false);
       } catch {
-        setDoneGettingUser(true);
+        setLoading(false);
       }
     };
     fetchUser();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider
+      value={{ user, setUser, loading, setLoading }}
+    >
       {children}
     </UserContext.Provider>
   );

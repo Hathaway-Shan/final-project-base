@@ -4,9 +4,10 @@ import { useUser } from '../../context/userContext';
 import { signInUser } from '../../services/user-utils';
 import { signUpUser } from '../../services/user-utils';
 import styles from './AuthPage.module.css';
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
 export default function AuthPage() {
-  const { user, setUser } = useUser();
+  const { user, setUser, loading } = useUser();
   const { type } = useParams();
   const typeName = type === 'sign-in' ? 'sign-in' : 'sign-up';
 
@@ -35,6 +36,16 @@ export default function AuthPage() {
   };
 
   if (user) return <Navigate to="/" replace={true} />;
+
+  console.log('STATE OF LOADING IS: ', loading);
+
+  if (loading) {
+    return (
+      <div className={styles.wrapper}>
+        <LoadingAnimation />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.authWrapper}>

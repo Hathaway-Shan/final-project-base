@@ -1,0 +1,27 @@
+.aboutWrapper {
+  margin: 2rem;
+  background-color: var(--cardBackground);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.blueColumn {
+  background-color: blue;
+  height: 100px;
+}
+
+.greenColumn {
+  background-color: green;
+  height: 100px;
+}

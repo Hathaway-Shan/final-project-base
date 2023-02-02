@@ -23,7 +23,7 @@ export default function Navigation() {
             <a href="/">Home</a>
           </li>
           <li className={styles.navItem}>
-            <a href="#">About</a>
+            <a href="/about">About</a>
           </li>
           {!user && (
             <li className={styles.navItem}>
