@@ -1,7 +1,20 @@
 .aboutWrapper {
   margin: 2rem;
   background-color: var(--cardBackground);
+  padding: 1rem;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--boxShadow);
 }
+
+.aboutImg {
+  width: 2rem;
+}
+
+.devImage {
+  width: 8rem;
+  align-self: center;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -18,10 +31,29 @@
 
 .blueColumn {
   background-color: blue;
-  height: 100px;
+  height: 120px;
 }
 
 .greenColumn {
   background-color: green;
   height: 100px;
+}
+
+.orangeColumn {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: orange;
+  height: 100px;
+}
+
+.spacerRow {
+  width: 50%;
+}
+
+.purpleRow {
+  display: flex;
+  flex-direction: row;
+  background-color: purple;
+  padding: 1rem;
+  justify-content: space-evenly;
 }
