@@ -6,12 +6,22 @@
   box-shadow: var(--boxShadow);
 }
 
+.title {
+  margin-left: 3rem;
+}
+
 .aboutImg {
   width: 2rem;
+  background-color: var(--defaultWhite);
+  border-radius: 50%;
+  padding: 3px;
+  border: 2px solid black;
+  margin-left: 1.2rem;
+  margin-right: auto;
 }
 
 .devImage {
-  width: 8rem;
+  width: 12rem;
   align-self: center;
 }
 
@@ -29,9 +39,11 @@
   flex: 1;
 }
 
-.blueColumn {
-  background-color: blue;
-  height: 120px;
+.textColumnOne {
+  background-color: var(--defaultWhite);
+  margin-left: 2rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 1rem;
 }
 
 .greenColumn {
@@ -39,21 +51,27 @@
   height: 100px;
 }
 
-.orangeColumn {
+.textColumn {
+  background-color: var(--defaultWhite);
   margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: orange;
-  height: 100px;
+  margin-left: 2rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 1rem;
 }
 
 .spacerRow {
   width: 50%;
 }
 
-.purpleRow {
+.linkOne {
   display: flex;
   flex-direction: row;
-  background-color: purple;
   padding: 1rem;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+.aboutLinks {
+  text-align: center;
+  margin-top: 0.25rem;
 }

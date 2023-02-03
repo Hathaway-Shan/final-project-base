@@ -2,15 +2,17 @@
 // Please do not change this file!
 interface CssExports {
   'aboutImg': string;
+  'aboutLinks': string;
   'aboutWrapper': string;
-  'blueColumn': string;
   'column': string;
   'devImage': string;
   'greenColumn': string;
-  'orangeColumn': string;
-  'purpleRow': string;
+  'linkOne': string;
   'row': string;
   'spacerRow': string;
+  'textColumn': string;
+  'textColumnOne': string;
+  'title': string;
 }
 export const cssExports: CssExports;
 export default cssExports;
