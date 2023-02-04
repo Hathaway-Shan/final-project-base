@@ -2,6 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'aboutImg': string;
+  'aboutImgLogo': string;
   'aboutLinks': string;
   'aboutWrapper': string;
   'column': string;
@@ -9,11 +10,9 @@ interface CssExports {
   'greenColumn': string;
   'imageColumn': string;
   'imageColumnMobile': string;
-  'imageContainer': string;
   'linkOne': string;
   'resourceLink': string;
   'row': string;
-  'spacerRow': string;
   'textColumn': string;
   'textColumnOne': string;
   'title': string;

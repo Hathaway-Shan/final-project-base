@@ -136,7 +136,7 @@ export default function About() {
               target="_blank"
             >
               <img
-                className={styles.aboutImg}
+                className={styles.aboutImgLogo}
                 src="/images/Logo.png"
               />
               <div className={styles.aboutLinks}>Project Repo</div>
