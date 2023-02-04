@@ -14,6 +14,7 @@ import {
 import JobList from './components/JobList/JobList';
 import AuthPage from './components/AuthPage/AuthPage';
 import { UserProvider } from './context/userContext';
+import About from './components/About/About';
 
 const container =
   document.getElementById('app') || document.createElement('div');
@@ -27,6 +28,7 @@ root.render(
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<JobList />} />
+            <Route path="/about" element={<About />} />
             <Route path="/auth/:type" element={<AuthPage />} />
           </Route>
         </Routes>
