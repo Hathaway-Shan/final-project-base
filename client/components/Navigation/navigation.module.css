@@ -54,8 +54,10 @@
 }
 
 .navLogoText {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  text-rendering: optimizeLegibility;
+  font-weight: bold;
   color: var(--defaultBlack);
 }
 
