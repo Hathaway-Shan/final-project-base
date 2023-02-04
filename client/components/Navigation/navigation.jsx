@@ -1,12 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Hamburger from '../Hamburger/Hamburger';
 import styles from './navigation.module.css';
 import Search from '../SearchBar/SearchBar';
 import { useUser } from '../../context/userContext';
 import { signOutUser } from '../../services/user-utils';
+import { useState } from 'react';
 
 export default function Navigation() {
   const { user, setUser } = useUser();
+  let location = useLocation();
+
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
@@ -17,7 +20,7 @@ export default function Navigation() {
           />
         </a>
         <p className={styles.navLogoText}>Jr. Job Board</p>
-        <Search placeholder={'search jobs here...'} />
+        {location.pathname === '/' && <Search />}
         <ul className={styles.navMenu}>
           <li className={styles.navItem}>
             <a href="/">Home</a>

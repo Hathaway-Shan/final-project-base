@@ -7,7 +7,11 @@ interface CssExports {
   'column': string;
   'devImage': string;
   'greenColumn': string;
+  'imageColumn': string;
+  'imageColumnMobile': string;
+  'imageContainer': string;
   'linkOne': string;
+  'resourceLink': string;
   'row': string;
   'spacerRow': string;
   'textColumn': string;

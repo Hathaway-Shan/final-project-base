@@ -3,10 +3,18 @@ import styles from './About.module.css';
 
 export default function About() {
   const disclaimer = ` it is not intended to function as a real job board.`;
-  const inProgress = '(currently in progress)';
+  const inProgress = ' (currently in progress)';
   return (
     <div className={styles.aboutWrapper}>
       <h1 className={styles.title}>About This Project</h1>
+      <div className={styles.row}>
+        <div className={styles.imageColumnMobile}>
+          <img
+            src="/images/programing.png"
+            className={styles.devImage}
+          />
+        </div>
+      </div>
       <div className={styles.row}>
         <div className={styles.column}>
           <div className={styles.textColumnOne}>
@@ -20,6 +28,7 @@ export default function About() {
               All jobs here are gathered by web scraper built into a
               Node.js backend. Their original source is{' '}
               <a
+                className={styles.resourceLink}
                 href="https://remoteok.com/remote-javascript-jobs"
                 target="_blank"
               >
@@ -29,13 +38,17 @@ export default function About() {
             </p>
             <p>
               All icons are sourced from{' '}
-              <a href="https://www.flaticon.com/" target="_blank">
+              <a
+                className={styles.resourceLink}
+                href="https://www.flaticon.com/"
+                target="_blank"
+              >
                 <strong>flaticon.com</strong>
               </a>
             </p>
           </div>
         </div>
-        <div className={styles.column}>
+        <div className={styles.imageColumn}>
           <img
             src="/images/programing.png"
             className={styles.devImage}
@@ -61,8 +74,9 @@ export default function About() {
               Although I am ultimately pretty happy with how the site
               turned out I will be adding some additional upgrades and
               features as I go. Mostly for fun and as a learning
-              experience but a general overview of the versions, both
-              finished and in progress will be posted here as I go.
+              experience. However, a general overview of the versions,
+              both finished and in progress, will be posted here as I
+              go.
             </p>
             <p>
               <strong>Version 1.0</strong>: Contained the basic proof

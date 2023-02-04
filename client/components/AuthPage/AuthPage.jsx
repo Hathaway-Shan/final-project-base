@@ -37,8 +37,6 @@ export default function AuthPage() {
 
   if (user) return <Navigate to="/" replace={true} />;
 
-  console.log('STATE OF LOADING IS: ', loading);
-
   if (loading) {
     return (
       <div className={styles.wrapper}>
